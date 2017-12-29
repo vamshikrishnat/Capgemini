@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Admin Page</title>
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/font-awesome.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+<body>
+	<th:block th:include="/_header2"></th:block>
+		<table width="1200" height="250" align="center">
+			<tr>
+				<th>Product Id</th>
+				<th>Product Name</th>
+				<th>Quantity</th>
+				<th>Price</th>
+			</tr>
+			<tr th:each="pro : ${prodInf}">
+				<td align="left"><span th:utext="${pro.productId}"></span></td>
+				<td align="left"><span th:utext="${pro.productName}"></span></td>
+				<td align="left"><span th:utext="${pro.quantity}"></span></td>
+				<td align="left"><span th:utext="${pro.productPrice}"></span></td>
+				<td align="center"><a href=""><img src="images/tick.png" width="30" title="Proceed To Checkout" align="center" /></a></td><td></td>
+				<td align="center"><a href=""><img src="images/wrong.jpg" width="30" title="Cancel" align="center" /></a></td>
+			</tr>
+		</table>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<th:block th:include="/_footer"></th:block>
+</body>
+</html>
