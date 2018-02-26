@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Register User</title>
+</head>
+<body>
+	<table>
+		<tr><th>Sl. No</th>
+		<th>Name</th>
+		<th>Mobile</th>
+		<th>Email</th>
+		<th>Password</th></tr>
+		
+			<th:block th:each="user:${all}">
+			<tr>
+			<th th:utext="${user.sl_no}"></th>
+			<th th:utext="${user.name}"></th>
+			<th th:utext="${user.mobile}"></th>
+			<th th:utext="${user.email}"></th>
+			<th th:utext="${user.password}"></th>
+			<th><a th:href="@{/editrequest}+'?name='+${user.name}">Edit</a></th>
+			<th><a th:href="@{/delete}+'?user='+${user}">Delete</a></th>
+				</tr>
+			</th:block>
+	
+	</table>
+</body>
+</html>

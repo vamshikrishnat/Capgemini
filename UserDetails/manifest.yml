@@ -1,0 +1,11 @@
+applications:
+- name: UserDetails
+  disk_quota: 1G
+  instances: 1
+  memory: 1G
+#  routes:
+#  - route: userdetails-relaxed-ardvark.cfapps.io
+  services:
+  - mysql
+  stack: cflinuxfs2
+  path: target/UserDetails-0.0.1-SNAPSHOT.jar
